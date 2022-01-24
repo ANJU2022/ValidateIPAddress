@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-//check ip address valid or not
+// check ip address valid or not
 func ip4or6(s string) string {
 
 	for i := 0; i < len(s); i++ {
@@ -24,8 +24,8 @@ func ip4or6(s string) string {
 	return "Invalid ip"
 }
 
-//file create and take user input
-func CreateFile(filename, text string) {
+// file create and take user input
+func createFile(filename, text string) {
 
 	file, err := os.Create(filename)
 
@@ -44,8 +44,8 @@ func CreateFile(filename, text string) {
 	fmt.Printf("\nLength: %d bytes", len)
 }
 
-//read user input from file
-func ReadFile(filename string) {
+// read user input from file
+func readFile(filename string) {
 
 	f, err := os.Open(filename)
 	if err != nil {
@@ -93,8 +93,8 @@ func main() {
 	input, _ := inputReader.ReadString('\n')
 
 	// file is created and read
-	CreateFile(filename, input)
+	createFile(filename, input)
 	fmt.Println("")
 
-	ReadFile(filename)
+	readFile(filename)
 }
